@@ -5,3 +5,5 @@
 [resource]
 background_mode = 2
 background_sky = SubResource( 1 )
+dof_blur_far_distance = 8192.0
+dof_blur_near_distance = 8192.0

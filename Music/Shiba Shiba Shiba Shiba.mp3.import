@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Shiba Shiba Shiba Shiba.mp3-3e7a9ec6109f2a9fa40049cb4d603966.mp3str"
+
+[deps]
+
+source_file="res://Music/Shiba Shiba Shiba Shiba.mp3"
+dest_files=[ "res://.import/Shiba Shiba Shiba Shiba.mp3-3e7a9ec6109f2a9fa40049cb4d603966.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
