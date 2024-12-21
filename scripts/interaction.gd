@@ -2,7 +2,7 @@ extends Area
 
 signal item_interact
 
-var item_name = "樹"
+var item_name = "石頭"
 var can_interact = false  # 用來檢測是否可以互動
 
 func _ready():
@@ -25,4 +25,4 @@ func _process(delta):
 		interact()
 
 func interact():
-	print("這是 " + item_name)  # 在此處添加互動邏輯
+	print("就是顆" + item_name)  # 在此處添加互動邏輯

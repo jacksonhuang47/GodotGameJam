@@ -3,7 +3,7 @@ extends KinematicBody
 # Variables
 var speed: float = 5.0  # Movement speed
 var velocity: Vector3 = Vector3.ZERO
-
+var item = []  # 玩家物品清單
 func _physics_process(delta: float) -> void:
 	# Reset the velocity to zero (retain the y-component for gravity)
 	velocity.x = 0
@@ -37,7 +37,7 @@ func _physics_process(delta: float) -> void:
 
 
 
-#func _on_item_picked_up(item_name):
-	# 添加物品到玩家的背包
-	#item.append(item_name)
-	#print("撿到了", item_name)
+func _on_item_picked_up(item_name):
+	#添加物品到玩家的背包
+	item.append(item_name)
+	print("撿到了", item_name)
