@@ -33,3 +33,11 @@ func _physics_process(delta: float) -> void:
 
 	# Move the player using move_and_slide
 	move_and_slide(velocity)
+
+
+
+
+#func _on_item_picked_up(item_name):
+	# 添加物品到玩家的背包
+	#item.append(item_name)
+	#print("撿到了", item_name)
