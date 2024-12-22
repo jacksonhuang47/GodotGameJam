@@ -62,7 +62,7 @@ size_flags_vertical = 3
 
 [node name="Label" type="Label" parent="Player/CanvasLayer/VBoxContainer"]
 margin_right = 1920.0
-margin_bottom = 307.0
+margin_bottom = 597.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 13 )
 text = "
