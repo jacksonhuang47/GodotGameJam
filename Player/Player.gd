@@ -4,6 +4,9 @@ var speed: float = 5.0  # Movement speed
 var velocity: Vector3 = Vector3.ZERO
 var inventory = {}  # 玩家物品清單
 onready var inventory_ui = $CanvasLayer/VBoxContainer
+onready var audio_stream_player_3d = $AudioStreamPlayer3D
+onready var animation_tree = $AnimationTree
+onready var animation_state = animation_tree.get("parameters/playback")
 
 func _ready():
 	# 初始化背包顯示
@@ -19,19 +22,29 @@ func _physics_process(delta: float) -> void:
 
 	# Get movement input
 	var input_vector = Vector2.ZERO
-	if Input.is_action_pressed("ui_up"):
+	if Input.get_action_strength("ui_up"):
 		input_vector.y -= 1
-	if Input.is_action_pressed("ui_down"):
+	if Input.get_action_strength("ui_down"):
 		input_vector.y += 1
-	if Input.is_action_pressed("ui_left"):
+	if Input.get_action_strength("ui_left"):
 		input_vector.x -= 1
-	if Input.is_action_pressed("ui_right"):
+	if Input.get_action_strength("ui_right"):
 		input_vector.x += 1
+		
+	# 如果沒有移動則播放閒置動畫
+	if input_vector == Vector2.ZERO:
+		audio_stream_player_3d.stop()
+		animation_state.travel("Idle")
+	if input_vector != Vector2.ZERO and audio_stream_player_3d.playing == false:
+		# 如果有移動，則播放行走動畫
+		audio_stream_player_3d.play()
+		animation_tree.set("parameters/Idle/blend_position", input_vector)
+		animation_tree.set("parameters/Run/blend_position", input_vector)
+		animation_state.travel("Run")
 
 	# Normalize the input to avoid faster diagonal movement
 	if input_vector != Vector2.ZERO:
 		input_vector = input_vector.normalized()
-
 	# Calculate movement direction relative to the world
 	var direction = Vector3(input_vector.x, 0, input_vector.y) * speed
 
@@ -43,6 +56,7 @@ func _physics_process(delta: float) -> void:
 
 	# Move the player using move_and_slide
 	move_and_slide(velocity)
+
 			
 func add_to_inventory(item_name: String):
 	if inventory.has(item_name):

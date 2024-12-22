@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/腳步聲（樹葉+鵜鶘） (跑步2.28x).mp3-afcb41a4d5b41df9f8f4e0cb53e4777e.mp3str"
+
+[deps]
+
+source_file="res://Sound/腳步聲（樹葉+鵜鶘） (跑步2.28x).mp3"
+dest_files=[ "res://.import/腳步聲（樹葉+鵜鶘） (跑步2.28x).mp3-afcb41a4d5b41df9f8f4e0cb53e4777e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -5,6 +5,8 @@ signal item_pick_up
 var item_name = "長得像眼睛的葡萄"
 var can_interact = false  # 用來檢測是否可以互動
 
+onready var picksound = $"../Picksound"
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# 連接信號，檢測玩家是否進入或離開互動範圍
@@ -25,7 +27,9 @@ func _process(delta):
 		interact()
 		emit_signal("item_pick_up", item_name)
 		call_deferred("queue_free")
+		
 func interact():
 	var player = get_parent().get_node("Player")  # 獲取玩家節點
 	if player:
 		player.add_to_inventory(item_name)
+		picksound.play()

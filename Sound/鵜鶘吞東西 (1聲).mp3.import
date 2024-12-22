@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/鵜鶘吞東西 (1聲).mp3-e57a47694f9cd4121cf8216d435730bf.mp3str"
+
+[deps]
+
+source_file="res://Sound/鵜鶘吞東西 (1聲).mp3"
+dest_files=[ "res://.import/鵜鶘吞東西 (1聲).mp3-e57a47694f9cd4121cf8216d435730bf.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

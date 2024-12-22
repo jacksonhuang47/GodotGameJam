@@ -2,6 +2,8 @@ extends Area
 
 signal item_pick_up
 
+onready var picksound = $"../Picksound"
+
 var item_name = "長得像心臟的火龍果"
 var can_interact = false  # 用來檢測是否可以互動
 
@@ -29,3 +31,4 @@ func interact():
 	var player = get_parent().get_node("Player")  # 獲取玩家節點
 	if player:
 		player.add_to_inventory(item_name)
+		picksound.play()

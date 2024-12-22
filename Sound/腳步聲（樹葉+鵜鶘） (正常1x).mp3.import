@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/腳步聲（樹葉+鵜鶘） (正常1x).mp3-85676a8122f53e40d796eae93463a26c.mp3str"
+
+[deps]
+
+source_file="res://Sound/腳步聲（樹葉+鵜鶘） (正常1x).mp3"
+dest_files=[ "res://.import/腳步聲（樹葉+鵜鶘） (正常1x).mp3-85676a8122f53e40d796eae93463a26c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

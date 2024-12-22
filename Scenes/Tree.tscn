@@ -10,7 +10,7 @@ transform = Transform( 0.25, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 5.08175, 0.01, 1 )
 script = ExtResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 2.05, 0, 0, 0, 2.2, 0, 0, 0, 1, 0.0137253, 0.01, 0.0280936 )
+transform = Transform( 2.05, 0, 0, 0, 2.2, 0, 0, 0, 0.253269, 0.0137253, 0.01, 0.0280936 )
 shape = SubResource( 9 )
 
 [node name="Sprite3D" type="Sprite3D" parent="."]

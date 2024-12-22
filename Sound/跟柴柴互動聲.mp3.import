@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/跟柴柴互動聲.mp3-cf930069a4a77da8784679a824985b97.mp3str"
+
+[deps]
+
+source_file="res://Sound/跟柴柴互動聲.mp3"
+dest_files=[ "res://.import/跟柴柴互動聲.mp3-cf930069a4a77da8784679a824985b97.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
