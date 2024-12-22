@@ -64,12 +64,10 @@ func update_inventory_ui():
 		item_label.text = item_name + ": " + str(inventory[item_name])
 		inventory_ui.add_child(item_label)	
 		print("Added Label:", item_label.text)
-	print("After updating:", inventory_ui.get_child_count())
 func show_inventory():
 	print("背包內容:")
 	for item_name in inventory.keys():
 		print(item_name + ": " + str(inventory[item_name]))
-		print("Child Node:", Label)
 
 
 

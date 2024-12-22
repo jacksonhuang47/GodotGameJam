@@ -2,7 +2,7 @@ extends Area
 
 signal item_pick_up
 
-var item_name = "佛手柑"
+var item_name = "長得像手掌的佛手柑"
 var can_interact = false  # 用來檢測是否可以互動
 
 # Called when the node enters the scene tree for the first time.
