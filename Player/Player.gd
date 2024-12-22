@@ -6,9 +6,8 @@ var inventory = {}  # 玩家物品清單
 onready var inventory_ui = $CanvasLayer/VBoxContainer
 
 func _ready():
-	# 初始化背包顯示
+	pass
 
-	update_inventory_ui()
 
 
 # Variables
@@ -50,24 +49,8 @@ func add_to_inventory(item_name: String):
 	else:
 		inventory[item_name] = 1  # 如果物品不存在，新增
 
-	update_inventory_ui()
-	print("得到了 " + item_name + " * " + str(inventory[item_name]))
 	
-func update_inventory_ui():
 
-	for i in range(1, inventory_ui.get_child_count()):
-		inventory_ui.get_child(i).queue_free()
-
-	# 動態添加背包物品
-	for item_name in inventory.keys():
-		var item_label = Label.new()
-		item_label.text = item_name + ": " + str(inventory[item_name])
-		inventory_ui.add_child(item_label)	
-		print("Added Label:", item_label.text)
-func show_inventory():
-	print("背包內容:")
-	for item_name in inventory.keys():
-		print(item_name + ": " + str(inventory[item_name]))
 
 
 
