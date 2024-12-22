@@ -2,7 +2,7 @@ extends Area
 
 signal item_pick_up
 
-var item_name = "火龍果"
+var item_name = "葡萄"
 var can_interact = false  # 用來檢測是否可以互動
 
 # Called when the node enters the scene tree for the first time.
@@ -26,5 +26,6 @@ func _process(delta):
 		emit_signal("item_pick_up", item_name)
 		call_deferred("queue_free")
 func interact():
-	print("Interacted with the " + item_name)
-	
+	var player = get_parent().get_node("Player")  # 獲取玩家節點
+	if player:
+		player.add_to_inventory(item_name)

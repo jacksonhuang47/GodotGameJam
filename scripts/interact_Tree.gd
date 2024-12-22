@@ -6,6 +6,7 @@ var item_name = "樹"
 var can_interact = false  # 用來檢測是否可以互動
 
 func _ready():
+	
 	connect("body_entered", self, "_on_body_entered")
 	connect("body_exited", self, "_on_body_exited")
 
@@ -17,6 +18,7 @@ func _on_body_entered(body):
 func _on_body_exited(body):
 	if body.name == "Player":  # Check如果離開範圍的是玩家
 		can_interact = false  # 玩家離開互動範圍
+		
 
 
 func _process(delta):	
