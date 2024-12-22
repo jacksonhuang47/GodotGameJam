@@ -1,9 +1,17 @@
 extends KinematicBody
 
-# Variables
 var speed: float = 5.0  # Movement speed
 var velocity: Vector3 = Vector3.ZERO
 var inventory = {}  # 玩家物品清單
+onready var inventory_ui = $CanvasLayer/VBoxContainer
+
+func _ready():
+	# 初始化背包顯示
+
+	update_inventory_ui()
+
+
+# Variables
 func _physics_process(delta: float) -> void:
 	# Reset the velocity to zero (retain the y-component for gravity)
 	velocity.x = 0
@@ -30,21 +38,38 @@ func _physics_process(delta: float) -> void:
 	# Apply direction to velocity
 	velocity.x = direction.x
 	velocity.z = direction.z
+	
+	
 
 	# Move the player using move_and_slide
 	move_and_slide(velocity)
-	
+			
 func add_to_inventory(item_name: String):
 	if inventory.has(item_name):
 		inventory[item_name] += 1  # 如果物品已存在，增加數量
 	else:
 		inventory[item_name] = 1  # 如果物品不存在，新增
+
+	update_inventory_ui()
 	print("得到了 " + item_name + " * " + str(inventory[item_name]))
 	
+func update_inventory_ui():
+
+	for i in range(1, inventory_ui.get_child_count()):
+		inventory_ui.get_child(i).queue_free()
+
+	# 動態添加背包物品
+	for item_name in inventory.keys():
+		var item_label = Label.new()
+		item_label.text = item_name + ": " + str(inventory[item_name])
+		inventory_ui.add_child(item_label)	
+		print("Added Label:", item_label.text)
+	print("After updating:", inventory_ui.get_child_count())
 func show_inventory():
 	print("背包內容:")
 	for item_name in inventory.keys():
 		print(item_name + ": " + str(inventory[item_name]))
+		print("Child Node:", Label)
 
 
 
