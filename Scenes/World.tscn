@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=2]
+[gd_scene load_steps=94 format=2]
 
 [ext_resource path="res://scripts/Interact_rock.gd" type="Script" id=1]
 [ext_resource path="res://scripts/ItemPickup_grapes.gd" type="Script" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://image/animals.png" type="Texture" id=18]
 [ext_resource path="res://Sound/腳步聲（樹葉+鵜鶘） (跑步2.28x).mp3" type="AudioStream" id=19]
 [ext_resource path="res://Sound/鵜鶘撿東西.mp3" type="AudioStream" id=20]
+[ext_resource path="res://image/animals_new.png" type="Texture" id=21]
 
 [sub_resource type="AtlasTexture" id=41]
 flags = 23
@@ -135,6 +136,15 @@ animations = [ {
 } ]
 
 [sub_resource type="BoxShape" id=6]
+
+[sub_resource type="ProceduralSky" id=57]
+sky_horizon_color = Color( 0.647059, 0.839216, 0.945098, 1 )
+ground_bottom_color = Color( 0.647059, 0.839216, 0.945098, 1 )
+ground_horizon_color = Color( 0.647059, 0.839216, 0.945098, 1 )
+
+[sub_resource type="Environment" id=58]
+background_mode = 2
+background_sky = SubResource( 57 )
 
 [sub_resource type="Animation" id=22]
 length = 0.001
@@ -342,6 +352,218 @@ graph_offset = Vector2( -138.96, -19.6875 )
 
 [sub_resource type="BoxShape" id=5]
 
+[sub_resource type="AtlasTexture" id=59]
+flags = 23
+atlas = ExtResource( 21 )
+region = Rect2( 724, 412, 362, 362 )
+
+[sub_resource type="AtlasTexture" id=60]
+flags = 23
+atlas = ExtResource( 21 )
+region = Rect2( 724, 774, 362, 362 )
+
+[sub_resource type="AtlasTexture" id=61]
+flags = 23
+atlas = ExtResource( 21 )
+region = Rect2( 362, 774, 362, 362 )
+
+[sub_resource type="AtlasTexture" id=62]
+flags = 23
+atlas = ExtResource( 21 )
+region = Rect2( 1086, 774, 362, 362 )
+
+[sub_resource type="AtlasTexture" id=63]
+flags = 23
+atlas = ExtResource( 21 )
+region = Rect2( 724, 50, 362, 362 )
+
+[sub_resource type="AtlasTexture" id=64]
+flags = 23
+atlas = ExtResource( 21 )
+region = Rect2( 724, 412, 362, 362 )
+
+[sub_resource type="AtlasTexture" id=65]
+flags = 23
+atlas = ExtResource( 21 )
+region = Rect2( 724, 1136, 362, 362 )
+
+[sub_resource type="AtlasTexture" id=66]
+flags = 23
+atlas = ExtResource( 21 )
+region = Rect2( 724, 1498, 362, 362 )
+
+[sub_resource type="AtlasTexture" id=67]
+flags = 23
+atlas = ExtResource( 21 )
+region = Rect2( 0, 774, 362, 362 )
+
+[sub_resource type="AtlasTexture" id=68]
+flags = 23
+atlas = ExtResource( 21 )
+region = Rect2( 362, 774, 362, 362 )
+
+[sub_resource type="AtlasTexture" id=69]
+flags = 23
+atlas = ExtResource( 21 )
+region = Rect2( 1086, 774, 362, 362 )
+
+[sub_resource type="AtlasTexture" id=70]
+flags = 23
+atlas = ExtResource( 21 )
+region = Rect2( 1448, 774, 362, 362 )
+
+[sub_resource type="SpriteFrames" id=71]
+animations = [ {
+"frames": [ SubResource( 59 ) ],
+"loop": true,
+"name": "idle_back",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 60 ) ],
+"loop": true,
+"name": "idle_front",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 61 ) ],
+"loop": true,
+"name": "idle_left",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 62 ) ],
+"loop": true,
+"name": "idle_right",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 63 ), SubResource( 64 ) ],
+"loop": true,
+"name": "run_back",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 65 ), SubResource( 66 ) ],
+"loop": true,
+"name": "run_front",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 67 ), SubResource( 68 ) ],
+"loop": true,
+"name": "run_left",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 69 ), SubResource( 70 ) ],
+"loop": true,
+"name": "run_right",
+"speed": 5.0
+} ]
+
+[sub_resource type="AnimationNodeAnimation" id=72]
+animation = "idle_front"
+
+[sub_resource type="AnimationNodeAnimation" id=73]
+animation = "idle_back"
+
+[sub_resource type="AnimationNodeAnimation" id=74]
+animation = "idle_left"
+
+[sub_resource type="AnimationNodeAnimation" id=75]
+animation = "idle_right"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id=76]
+blend_point_0/node = SubResource( 72 )
+blend_point_0/pos = Vector2( 0, 1 )
+blend_point_1/node = SubResource( 73 )
+blend_point_1/pos = Vector2( 0, -1 )
+blend_point_2/node = SubResource( 74 )
+blend_point_2/pos = Vector2( -1, 0 )
+blend_point_3/node = SubResource( 75 )
+blend_point_3/pos = Vector2( 1, 0 )
+blend_mode = 1
+
+[sub_resource type="AnimationNodeStateMachine" id=77]
+states/Idle/node = SubResource( 76 )
+states/Idle/position = Vector2( 235.5, 73.5 )
+start_node = "Idle"
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=78]
+
+[sub_resource type="Animation" id=79]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite3D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "idle_front" ]
+}
+
+[sub_resource type="Animation" id=80]
+resource_name = "idle_back"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite3D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "run_back" ]
+}
+
+[sub_resource type="Animation" id=81]
+resource_name = "idle_front"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite3D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "idle_front" ]
+}
+
+[sub_resource type="Animation" id=82]
+resource_name = "idle_left"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite3D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "idle_left" ]
+}
+
+[sub_resource type="Animation" id=83]
+resource_name = "idle_right"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite3D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ "run_right" ]
+}
+
 [sub_resource type="BoxShape" id=3]
 
 [sub_resource type="SpatialMaterial" id=10]
@@ -380,6 +602,7 @@ shape = SubResource( 6 )
 
 [node name="Camera" type="Camera" parent="Player"]
 transform = Transform( 5, -1.78576e-13, 1.03101e-13, 1.03101e-13, 4.33013, 2.5, -1.78576e-13, -2.5, 4.33013, 0, 3.05983, 4.83568 )
+environment = SubResource( 58 )
 fov = 105.5
 size = 8.07735
 
@@ -448,6 +671,44 @@ shape = SubResource( 5 )
 [node name="Sprite3D" type="Sprite3D" parent="Capibara/CollisionShape"]
 transform = Transform( 1, 0, 0, 0, 0.866026, 1.4775, 0, -0.499999, 2.55911, 0, 0, 0 )
 texture = ExtResource( 14 )
+
+[node name="Dog" type="KinematicBody" parent="."]
+transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -2.79559, 0.01, -5.114 )
+
+[node name="Area" type="Area" parent="Dog"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0 )
+script = ExtResource( 12 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Dog/Area"]
+shape = SubResource( 5 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Dog"]
+transform = Transform( 0.89, 0, 0, 0, 0.89, 0, 0, 0, 0.89, 0, 0, 0 )
+shape = SubResource( 5 )
+
+[node name="Sprite3D" type="Sprite3D" parent="Dog/CollisionShape"]
+transform = Transform( 1, 0, 0, 0, 0.866026, 1.4775, 0, -0.499999, 2.55911, 0, 0, 0 )
+visible = false
+texture = ExtResource( 14 )
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Dog"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0 )
+frames = SubResource( 71 )
+animation = "idle_front"
+
+[node name="AnimationTree" type="AnimationTree" parent="Dog"]
+tree_root = SubResource( 77 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/playback = SubResource( 78 )
+parameters/Idle/blend_position = Vector2( -0.00369006, 0.317597 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Dog"]
+anims/RESET = SubResource( 79 )
+anims/idle_back = SubResource( 80 )
+anims/idle_front = SubResource( 81 )
+anims/idle_left = SubResource( 82 )
+anims/idle_right = SubResource( 83 )
 
 [node name="ground" type="StaticBody" parent="."]
 transform = Transform( 0.179978, 0, 0, 0, 0.3, 0, 0, 0, 0.159796, 0, 0, 0 )
