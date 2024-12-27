@@ -1,4 +1,4 @@
-[gd_scene load_steps=94 format=2]
+[gd_scene load_steps=97 format=2]
 
 [ext_resource path="res://scripts/Interact_rock.gd" type="Script" id=1]
 [ext_resource path="res://scripts/ItemPickup_grapes.gd" type="Script" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://Sound/腳步聲（樹葉+鵜鶘） (跑步2.28x).mp3" type="AudioStream" id=19]
 [ext_resource path="res://Sound/鵜鶘撿東西.mp3" type="AudioStream" id=20]
 [ext_resource path="res://image/animals_new.png" type="Texture" id=21]
+[ext_resource path="res://Scenes/Dog.gd" type="Script" id=22]
 
 [sub_resource type="AtlasTexture" id=41]
 flags = 23
@@ -564,6 +565,12 @@ tracks/0/keys = {
 "values": [ "run_right" ]
 }
 
+[sub_resource type="Curve3D" id=85]
+_data = {
+"points": PoolVector3Array( 0, 0, 0, 0, 0, 0, -6.07298, -0.05, 3.55839, 0, 0, 0, 0, 0, 0, -11.9654, -0.05, 8.99161, 0, 0, 0, 0, 0, 0, -13.0367, -0.05, 19.9346, 0, 0, 0, 0, 0, 0, -12.0419, -0.05, 29.9593, 0, 0, 0, 0, 0, 0, -9.36352, -0.05, 36.6169, 0, 0, 0, 0, 0, 0, -5.91993, -0.05, 37.4586, 0, 0, 0, 0, 0, 0, 0.508105, -0.05, 33.5559, 0, 0, 0, 0, 0, 0, 1.04378, -0.05, 17.5623, 0, 0, 0, 0, 0, 0, 3.6456, -0.05, 9.9099, 0, 0, 0, 0, 0, 0, -0.945858, -0.05, 4.70625, 0, 0, 0, 0, 0, 0, -4.92512, -0.05, 3.71143 ),
+"tilts": PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 )
+}
+
 [sub_resource type="BoxShape" id=3]
 
 [sub_resource type="SpatialMaterial" id=10]
@@ -578,6 +585,8 @@ material = SubResource( 10 )
 extents = Vector3( 0.822753, 0.299648, 1 )
 
 [sub_resource type="BoxShape" id=7]
+
+[sub_resource type="BoxShape" id=84]
 
 [node name="World" type="Spatial"]
 
@@ -674,6 +683,7 @@ texture = ExtResource( 14 )
 
 [node name="Dog" type="KinematicBody" parent="."]
 transform = Transform( 0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -2.79559, 0.01, -5.114 )
+script = ExtResource( 22 )
 
 [node name="Area" type="Area" parent="Dog"]
 transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0 )
@@ -709,6 +719,12 @@ anims/idle_back = SubResource( 80 )
 anims/idle_front = SubResource( 81 )
 anims/idle_left = SubResource( 82 )
 anims/idle_right = SubResource( 83 )
+
+[node name="Path" type="Path" parent="Dog"]
+curve = SubResource( 85 )
+
+[node name="PathFollow" type="PathFollow" parent="Dog/Path"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.07298, -0.05, 3.55839 )
 
 [node name="ground" type="StaticBody" parent="."]
 transform = Transform( 0.179978, 0, 0, 0, 0.3, 0, 0, 0, 0.159796, 0, 0, 0 )
@@ -893,6 +909,24 @@ max_db = 5.788
 stream = ExtResource( 6 )
 attenuation_model = 3
 autoplay = true
+
+[node name="Walls" type="StaticBody" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="Walls"]
+transform = Transform( 1.45, 0, 0, 0, 1.825, 0, 0, 0, 11.0001, -10.47, 0, 0 )
+shape = SubResource( 84 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Walls"]
+transform = Transform( 1.45, 0, 0, 0, 1.825, 0, 0, 0, 10.8104, 10.52, 0, 0 )
+shape = SubResource( 84 )
+
+[node name="CollisionShape3" type="CollisionShape" parent="Walls"]
+transform = Transform( -6.72242e-06, 0, -11.1897, 0, 1.825, 0, 1.45, 0, -2.38447e-05, -0.889998, 0, 9.44 )
+shape = SubResource( 84 )
+
+[node name="CollisionShape4" type="CollisionShape" parent="Walls"]
+transform = Transform( -6.72242e-06, 0, -11.1897, 0, 1.825, 0, 1.45, 0, -2.38447e-05, -0.889998, 0, -9.42 )
+shape = SubResource( 84 )
 
 [editable path="Tree"]
 [editable path="Tree2"]
