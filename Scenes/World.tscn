@@ -12,10 +12,12 @@
 [ext_resource path="res://image/fruit_sprite_3.png" type="Texture" id=10]
 [ext_resource path="res://ItemPickup_Chayote.gd" type="Script" id=11]
 [ext_resource path="res://scripts/Interact_Capibara.gd" type="Script" id=12]
-[ext_resource path="res://Font/UI_font.tres" type="DynamicFont" id=13]
+[ext_resource path="res://image/Untitled_Artwork 112.png" type="Texture" id=13]
 [ext_resource path="res://image/Capibara.png" type="Texture" id=14]
 [ext_resource path="res://image/bird.png" type="Texture" id=15]
 [ext_resource path="res://Scenes/Tree.tscn" type="PackedScene" id=16]
+
+[ext_resource path="res://Font/NotoSansTC-VariableFont_wght.ttf" type="DynamicFontData" id=21]
 [ext_resource path="res://image/grass.png" type="Texture" id=17]
 [ext_resource path="res://image/animals.png" type="Texture" id=18]
 [ext_resource path="res://Sound/腳步聲（樹葉+鵜鶘） (跑步2.28x).mp3" type="AudioStream" id=19]
@@ -585,6 +587,14 @@ material = SubResource( 10 )
 extents = Vector3( 0.822753, 0.299648, 1 )
 
 [sub_resource type="BoxShape" id=7]
+
+[sub_resource type="DynamicFont" id=10]
+size = 30
+font_data = ExtResource( 21 )
+
+[sub_resource type="DynamicFont" id=11]
+size = 30
+font_data = ExtResource( 21 )
 
 [sub_resource type="BoxShape" id=84]
 
