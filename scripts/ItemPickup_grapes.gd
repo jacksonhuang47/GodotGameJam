@@ -1,17 +1,17 @@
-extends Area
+extends Area3D
 
 signal item_pick_up
 
 var item_name = "長得像眼睛的葡萄"
 var can_interact = false  # 用來檢測是否可以互動
 
-onready var picksound = $"../Picksound"
+@onready var picksound = $"../Picksound"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# 連接信號，檢測玩家是否進入或離開互動範圍
-	connect("body_entered", self, "_on_body_entered")
-	connect("body_exited", self, "_on_body_exited")
+	connect("body_entered", Callable(self, "_on_body_entered"))
+	connect("body_exited", Callable(self, "_on_body_exited"))
 
 func _on_body_entered(body):
 	if body.name == "Player":  # 玩家進入範圍

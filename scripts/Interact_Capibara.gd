@@ -1,4 +1,4 @@
-extends Area
+extends Area3D
 
 signal item_interact
 
@@ -6,8 +6,8 @@ var item_name = "卡皮巴拉"
 var can_interact = false  # 用來檢測是否可以互動
 
 func _ready():
-	connect("body_entered", self, "_on_body_entered")
-	connect("body_exited", self, "_on_body_exited")
+	connect("body_entered", Callable(self, "_on_body_entered"))
+	connect("body_exited", Callable(self, "_on_body_exited"))
 
 func _on_body_entered(body):
 	if body.name == "Player":  # Check如果進入範圍的是玩家

@@ -16,8 +16,8 @@ var story_lines = [
 	"正大光明的摸魚時間到！！！！！",
 ]
 var current_line = 0  # 當前顯示的文本索引
-onready var story_label =$Panel/Label  # 確保路徑正確
-onready var continue_button = $Panel/Button  # 確保路徑正確
+@onready var story_label =$Panel/Label  # 確保路徑正確
+@onready var continue_button = $Panel/Button  # 確保路徑正確
 
 func _ready():
 	update_story()
@@ -28,7 +28,7 @@ func update_story():
 		story_label.text = story_lines[current_line]
 	else:
 		# 當劇情結束時，切換到主遊戲場景
-		get_tree().change_scene("res://Scenes/World.tscn")  # 替換為你的主遊戲場景路徑
+		get_tree().change_scene_to_file("res://Scenes/World.tscn")  # 替換為你的主遊戲場景路徑
 	
 
 func _on_Button_pressed():

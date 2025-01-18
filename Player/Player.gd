@@ -1,12 +1,12 @@
-extends KinematicBody
+extends CharacterBody3D
 
 var speed: float = 5.0  # Movement speed
 var velocity: Vector3 = Vector3.ZERO
 var inventory = {}  # 玩家物品清單
-onready var inventory_ui = $CanvasLayer/VBoxContainer
-onready var audio_stream_player_3d = $AudioStreamPlayer3D
-onready var animation_tree = $AnimationTree
-onready var animation_state = animation_tree.get("parameters/playback")
+@onready var inventory_ui = $CanvasLayer/VBoxContainer
+@onready var audio_stream_player_3d = $AudioStreamPlayer3D
+@onready var animation_tree = $AnimationTree
+@onready var animation_state = animation_tree.get("parameters/playback")
 
 func _ready():
 	pass
@@ -54,7 +54,8 @@ func _physics_process(delta: float) -> void:
 	
 
 	# Move the player using move_and_slide
-	move_and_slide(velocity)
+	set_velocity(velocity)
+	move_and_slide()
 
 			
 func add_to_inventory(item_name: String):

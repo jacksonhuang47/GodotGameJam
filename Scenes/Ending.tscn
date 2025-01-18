@@ -3,16 +3,16 @@
 [node name="Ending" type="Node2D"]
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_right = 1929.0
-margin_bottom = 1091.0
+offset_right = 1929.0
+offset_bottom = 1091.0
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Label" type="Label" parent="."]
-margin_left = 896.0
-margin_top = 512.0
-margin_right = 1201.0
-margin_bottom = 622.0
+offset_left = 896.0
+offset_top = 512.0
+offset_right = 1201.0
+offset_bottom = 622.0
 text = "製作人: 傾古, 玉米, Arisu, Rain"

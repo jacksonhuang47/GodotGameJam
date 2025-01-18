@@ -1,0 +1,70 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1737179192
+default_env.tres::Environment::-1::1737179065::0::1::::<><>::
+Enemy.gd::GDScript::-1::1737179065::0::1::::<>CharacterBody3D<>::
+export_presets.cfg::TextFile::-1::1736063397::0::1::::<><>::
+icon.png::CompressedTexture2D::2665922788139028505::1734317559::1737179198::1::::<><>::
+ItemPickup_Chayote.gd::GDScript::-1::1737179065::0::1::::<>Area3D<>::
+Menu.gd::GDScript::-1::1734882332::0::1::::<>RefCounted<>::
+README.md::TextFile::-1::1734317612::0::1::::<><>::
+::res://Enemy/::1734811009
+Enemy.gd::GDScript::-1::1734811009::0::1::::<>RefCounted<>::
+Sticker5.png::CompressedTexture2D::6022514131599108742::1734455216::1737179198::1::::<><>::
+::res://Export/::1736063395
+index.apple-touch-icon.png::CompressedTexture2D::7798047139550063007::1736063394::1737179199::1::::<><>::
+index.icon.png::CompressedTexture2D::7152720394661873101::1736063394::1737179199::1::::<><>::
+index.png::CompressedTexture2D::7322384393942374708::1736063395::1737179199::1::::<><>::
+::res://Font/::1734882246
+NotoSansTC-VariableFont_wght.ttf::FontFile::640312555328815803::1734848157::1737179194::1::::<><>::
+UI_font.tres::FontFile::-1::1737179065::0::1::::<><>::res://Font/NotoSansTC-VariableFont_wght.ttf
+::res://fruit/::1734753255
+::res://image/::1736063397
+animals.png::CompressedTexture2D::8088396000035929874::1736063397::1737179236::1::::<><>::
+animals_new.png::CompressedTexture2D::3531223152872269539::1736063397::1737179236::1::::<><>::
+bird.png::CompressedTexture2D::6174974802532525115::1734859258::1737179232::1::::<><>::
+Capibara.png::CompressedTexture2D::4558230812915221475::1734859062::1737179231::1::::<><>::
+dog.png::CompressedTexture2D::3106999048026296972::1734859222::1737179199::1::::<><>::
+fruit_sprite_1.png::CompressedTexture2D::332232057202820624::1734776502::1737179231::1::::<><>::
+fruit_sprite_2.png::CompressedTexture2D::5039479341353852754::1734776502::1737179231::1::::<><>::
+fruit_sprite_3.png::CompressedTexture2D::1720169021851690590::1734776502::1737179231::1::::<><>::
+grass.png::CompressedTexture2D::6497705182067827971::1736063397::1737179200::1::::<><>::
+grass_sprite_1..png::CompressedTexture2D::4355644907237061297::1734776502::1737179231::1::::<><>::
+Menu.png::CompressedTexture2D::7581452520214397266::1734881328::1737179204::1::::<><>::
+rocks_sprite_1..png::CompressedTexture2D::917355183552152214::1734776502::1737179231::1::::<><>::
+SpaceStart.png::CompressedTexture2D::6384204744525533713::1734881683::1737179205::1::::<><>::
+tree_sprite_1.png::CompressedTexture2D::6783428160430559888::1734776502::1737179227::1::::<><>::
+Untitled_Artwork 108.png::CompressedTexture2D::4639156722385047220::1734890971::1737179198::1::::<><>::
+Untitled_Artwork 109.png::CompressedTexture2D::6826801960728812351::1734890971::1737179198::1::::<><>::
+Untitled_Artwork 110.png::CompressedTexture2D::3637216692580814829::1734890971::1737179198::1::::<><>::
+Untitled_Artwork 111.png::CompressedTexture2D::8141186102766101826::1734890971::1737179198::1::::<><>::
+Untitled_Artwork 112.png::CompressedTexture2D::4300403387064140662::1734890971::1737179198::1::::<><>::
+::res://item/::1734753848
+::res://Music/::1734762886
+Shiba Shiba Shiba Shiba.mp3::AudioStreamMP3::4174256749202102261::1734762886::1737179196::1::::<><>::
+::res://Player/::1736063396
+Player.gd::GDScript::-1::1737179065::0::1::::<>CharacterBody3D<>::
+Sticker8.png::CompressedTexture2D::3845415805336600695::1734455216::1737179198::1::::<><>::
+::res://Scenes/::1736063504
+Dog.gd::GDScript::-1::1737179065::0::1::::<>CharacterBody3D<>::
+Ending.tscn::PackedScene::-1::1737179065::0::1::::<><>::
+Menu.gd::GDScript::-1::1737179065::0::1::::<>CanvasLayer<>::
+Menu.tscn::PackedScene::-1::1737179065::0::1::::<><>::res://Scenes/Menu.gd<>res://image/SpaceStart.png<>res://image/Menu.png<>res://Font/NotoSansTC-VariableFont_wght.ttf
+story.tscn::PackedScene::-1::1737179065::0::1::::<><>::res://scripts/story.gd<>res://Font/UI_font.tres<>res://Font/NotoSansTC-VariableFont_wght.ttf
+Tree.tscn::PackedScene::-1::1737179065::0::1::::<><>::res://image/tree_sprite_1.png<>res://scripts/interact_Tree.gd
+World.tscn::PackedScene::-1::1737179065::0::1::::<><>::res://scripts/Interact_rock.gd<>res://scripts/ItemPickup_grapes.gd<>res://Player/Player.gd<>res://scripts/ItemPickup_DragonFruit.gd<>res://image/rocks_sprite_1..png<>res://Music/Shiba Shiba Shiba Shiba.mp3<>res://image/grass_sprite_1..png<>res://image/fruit_sprite_2.png<>res://image/fruit_sprite_1.png<>res://image/fruit_sprite_3.png<>res://ItemPickup_Chayote.gd<>res://scripts/Interact_Capibara.gd<>res://image/Capibara.png<>res://image/bird.png<>res://Scenes/Tree.tscn<>res://image/animals.png<>res://Sound/腳步聲（樹葉+鵜鶘） (跑步2.28x).mp3<>res://Sound/鵜鶘撿東西.mp3<>res://image/animals_new.png<>res://Scenes/Dog.gd
+::res://scripts/::1736063397
+Interact_Capibara.gd::GDScript::-1::1737179065::0::1::::<>Area3D<>::
+Interact_rock.gd::GDScript::-1::1737179065::0::1::::<>Area3D<>::
+interact_Tree.gd::GDScript::-1::1737179065::0::1::::<>Area3D<>::
+ItemPickup_DragonFruit.gd::GDScript::-1::1737179065::0::1::::<>Area3D<>::
+ItemPickup_grapes.gd::GDScript::-1::1737179065::0::1::::<>Area3D<>::
+story.gd::GDScript::-1::1737179065::0::1::::<>CanvasLayer<>::
+::res://Sound/::1736063397
+腳步聲（樹葉+鵜鶘） (快走1.33x).mp3::AudioStreamMP3::6203083106862585766::1736063396::1737179196::1::::<><>::
+腳步聲（樹葉+鵜鶘） (正常1x).mp3::AudioStreamMP3::5796913985468832109::1736063396::1737179196::1::::<><>::
+腳步聲（樹葉+鵜鶘） (跑步2.28x).mp3::AudioStreamMP3::6639253208378510750::1736063396::1737179196::1::::<><>::
+跟柴柴互動聲.mp3::AudioStreamMP3::3821353468094915954::1736063396::1737179196::1::::<><>::
+鵜鶘吞東西 (1聲).mp3::AudioStreamMP3::534093948619297946::1736063396::1737179196::1::::<><>::
+鵜鶘吞東西 (2聲).mp3::AudioStreamMP3::6531494026871751991::1736063396::1737179196::1::::<><>::
+鵜鶘吞東西 (吞下).mp3::AudioStreamMP3::1730787448333066946::1736063397::1737179196::1::::<><>::
+鵜鶘撿東西.mp3::AudioStreamMP3::6772372624000283161::1736063397::1737179196::1::::<><>::

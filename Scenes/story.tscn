@@ -1,10 +1,10 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/story.gd" type="Script" id=1]
-[ext_resource path="res://Font/UI_font.tres" type="DynamicFont" id=2]
-[ext_resource path="res://Font/NotoSansTC-VariableFont_wght.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Font/UI_font.tres" type="FontFile" id=2]
+[ext_resource path="res://Font/NotoSansTC-VariableFont_wght.ttf" type="FontFile" id=3]
 
-[sub_resource type="DynamicFont" id=1]
+[sub_resource type="FontFile" id=1]
 size = 50
 font_data = ExtResource( 3 )
 
@@ -26,7 +26,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 size_flags_horizontal = 6
 size_flags_vertical = 2
-custom_fonts/font = SubResource( 1 )
+theme_override_fonts/font = SubResource( 1 )
 align = 1
 valign = 1
 
@@ -35,12 +35,12 @@ anchor_left = 0.8
 anchor_top = 0.8
 anchor_right = 0.9
 anchor_bottom = 0.95
-margin_right = 12.0
-margin_bottom = 20.0
+offset_right = 12.0
+offset_bottom = 20.0
 size_flags_horizontal = 2
 size_flags_vertical = 2
-custom_fonts/font = ExtResource( 2 )
+theme_override_fonts/font = ExtResource( 2 )
 text = "NEXT"
-icon_align = 1
+icon_alignment = 1
 
 [connection signal="pressed" from="story/Panel/Button" to="story" method="_on_Button_pressed"]
