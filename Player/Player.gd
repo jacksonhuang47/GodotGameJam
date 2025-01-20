@@ -1,7 +1,6 @@
 extends CharacterBody3D
 
-var speed: float = 5.0  # Movement speed
-var velocity: Vector3 = Vector3.ZERO
+var speed: float = 5.0  # 移動速度
 var inventory = {}  # 玩家物品清單
 @onready var inventory_ui = $CanvasLayer/VBoxContainer
 @onready var audio_stream_player_3d = $AudioStreamPlayer3D
@@ -11,15 +10,12 @@ var inventory = {}  # 玩家物品清單
 func _ready():
 	pass
 
-
-
-# Variables
 func _physics_process(delta: float) -> void:
-	# Reset the velocity to zero (retain the y-component for gravity)
+	# Reset the x 和 z 方向的速度
 	velocity.x = 0
 	velocity.z = 0
 
-	# Get movement input
+	# 獲取輸入
 	var input_vector = Vector2.ZERO
 	if Input.get_action_strength("ui_up"):
 		input_vector.y -= 1
@@ -29,44 +25,33 @@ func _physics_process(delta: float) -> void:
 		input_vector.x -= 1
 	if Input.get_action_strength("ui_right"):
 		input_vector.x += 1
-		
-	# 如果沒有移動則播放閒置動畫
+
+	# 動畫和音效處理
 	if input_vector == Vector2.ZERO:
 		audio_stream_player_3d.stop()
 		animation_state.travel("Idle")
-	if input_vector != Vector2.ZERO and audio_stream_player_3d.playing == false:
-		# 如果有移動，則播放行走動畫
-		audio_stream_player_3d.play()
+	else:
+		if not audio_stream_player_3d.playing:
+			audio_stream_player_3d.play()
 		animation_tree.set("parameters/Idle/blend_position", input_vector)
 		animation_tree.set("parameters/Run/blend_position", input_vector)
 		animation_state.travel("Run")
 
-	# Normalize the input to avoid faster diagonal movement
-	if input_vector != Vector2.ZERO:
+		# 規範化輸入，避免斜向移動速度過快
 		input_vector = input_vector.normalized()
-	# Calculate movement direction relative to the world
+
+	# 計算方向
 	var direction = Vector3(input_vector.x, 0, input_vector.y) * speed
 
-	# Apply direction to velocity
+	# 將方向應用到內建 velocity
 	velocity.x = direction.x
 	velocity.z = direction.z
-	
-	
 
-	# Move the player using move_and_slide
-	set_velocity(velocity)
+	# 移動角色
 	move_and_slide()
 
-			
 func add_to_inventory(item_name: String):
 	if inventory.has(item_name):
 		inventory[item_name] += 1  # 如果物品已存在，增加數量
 	else:
 		inventory[item_name] = 1  # 如果物品不存在，新增
-
-	
-
-
-
-
-
