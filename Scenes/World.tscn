@@ -1,4 +1,4 @@
-[gd_scene load_steps=94 format=3 uid="uid://2je0gg7hpwwe"]
+[gd_scene load_steps=93 format=3 uid="uid://2je0gg7hpwwe"]
 
 [ext_resource type="Script" path="res://scripts/Interact_rock.gd" id="1"]
 [ext_resource type="Script" path="res://scripts/ItemPickup_grapes.gd" id="2"]
@@ -161,6 +161,7 @@ animations = [{
 }]
 
 [sub_resource type="BoxShape3D" id="6"]
+size = Vector3(2.16711, 1.95169, 1.41946)
 
 [sub_resource type="Sky" id="57"]
 
@@ -635,9 +636,8 @@ point_count = 11
 
 [sub_resource type="BoxShape3D" id="3"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_4b4ma"]
-
 [sub_resource type="BoxShape3D" id="9"]
+size = Vector3(1, 1, 0.372437)
 
 [sub_resource type="BoxShape3D" id="8"]
 size = Vector3(1.64551, 0.599296, 2)
@@ -663,7 +663,7 @@ visible = false
 texture = ExtResource("15")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.369587, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.342182, 0.600139, 0.845702)
 shape = SubResource("6")
 
 [node name="Camera3D" type="Camera3D" parent="Player"]
@@ -772,10 +772,9 @@ curve = SubResource("85")
 transform = Transform3D(-0.67788, 0, 0.735173, 0, 1, 0, -0.735173, 0, -0.67788, -6.07298, -0.05, 3.55839)
 
 [node name="ground" type="StaticBody3D" parent="."]
-transform = Transform3D(0.179978, 0, 0, 0, 0.3, 0, 0, 0, 0.159796, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ground"]
-transform = Transform3D(50, 0, 0, 0, 1, 0, 0, 0, 50, 0.26, -2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26, -2, 0)
 shape = SubResource("3")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="ground"]
@@ -789,27 +788,11 @@ transform = Transform3D(3.33333, 0, 0, 0, 3.33333, 0, 0, 0, 3.33333, 0, 0, 0)
 visible = false
 skeleton = NodePath("../..")
 
-[node name="Tree" parent="." instance=ExtResource("16")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 5.08175, 0.749383, 1)
-
-[node name="CollisionShape3D" parent="Tree" index="0"]
-transform = Transform3D(2.7, 0, 0, 0, 2.898, 0, 0, 0, 0.3954, 0.0137253, 0.00999999, 0.0280936)
-shape = SubResource("BoxShape3D_4b4ma")
-
-[node name="Sprite3D" parent="Tree" index="1"]
-transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0)
-
-[node name="CharacterBody3D" type="CharacterBody3D" parent="Tree"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tree/CharacterBody3D"]
-transform = Transform3D(2.05, 0, 0, 0, 2.2, 0, 0, 0, 0.2, 0.0137253, 0.00999999, 0.0280936)
-shape = SubResource("9")
-
 [node name="Tree2" parent="." instance=ExtResource("16")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 7.25651, 0.801388, 1)
 
 [node name="CollisionShape3D" parent="Tree2" index="0"]
-transform = Transform3D(2.7, 0, 0, 0, 2.898, 0, 0, 0, 0.2636, 0.0137253, 0.00999999, 0.0280936)
+transform = Transform3D(2.2, 0, 0, 0, 2.2, 0, 0, 0, 2.2, 0.0557175, 0.195269, 0.677973)
 
 [node name="Sprite3D" parent="Tree2" index="1"]
 transform = Transform3D(-1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0)
@@ -817,7 +800,70 @@ transform = Transform3D(-1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0)
 [node name="CharacterBody3D" type="CharacterBody3D" parent="Tree2"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Tree2/CharacterBody3D"]
-transform = Transform3D(2.05, 0, 0, 0, 2.2, 0, 0, 0, 0.2, 0.0137253, 0.00999999, 0.0280936)
+transform = Transform3D(2.2, 0, 0, 0, 2.2, 0, 0, 0, 2.2, 0.0137253, 0.00999999, 0.718413)
+shape = SubResource("9")
+
+[node name="Tree3" parent="." instance=ExtResource("16")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 3.73129, 0.801388, 1)
+
+[node name="CollisionShape3D" parent="Tree3" index="0"]
+transform = Transform3D(2.2, 0, 0, 0, 2.2, 0, 0, 0, 2.2, 0.0557175, 0.195269, 0.677973)
+
+[node name="Sprite3D" parent="Tree3" index="1"]
+transform = Transform3D(-1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, -0.104482, 0, 0)
+flip_h = true
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="Tree3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tree3/CharacterBody3D"]
+transform = Transform3D(2.2, 0, 0, 0, 2.2, 0, 0, 0, 2.2, 0.0137253, 0.00999999, 0.718413)
+shape = SubResource("9")
+
+[node name="Tree4" parent="." instance=ExtResource("16")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.5057, 0.801388, -2.49089)
+
+[node name="CollisionShape3D" parent="Tree4" index="0"]
+transform = Transform3D(2.2, 0, 0, 0, 2.2, 0, 0, 0, 2.2, 0.0557175, 0.195269, 0.677973)
+
+[node name="Sprite3D" parent="Tree4" index="1"]
+transform = Transform3D(-1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, -0.104482, 0, 0)
+flip_h = true
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="Tree4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tree4/CharacterBody3D"]
+transform = Transform3D(2.2, 0, 0, 0, 2.2, 0, 0, 0, 2.2, 0.0137253, 0.00999999, 0.718413)
+shape = SubResource("9")
+
+[node name="Tree5" parent="." instance=ExtResource("16")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -5.39515, 0.801388, -1.65762)
+
+[node name="CollisionShape3D" parent="Tree5" index="0"]
+transform = Transform3D(2.2, 0, 0, 0, 2.2, 0, 0, 0, 2.2, 0.0557175, 0.195269, 0.677973)
+
+[node name="Sprite3D" parent="Tree5" index="1"]
+transform = Transform3D(-1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, -0.104482, 0, 0)
+flip_h = true
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="Tree5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tree5/CharacterBody3D"]
+transform = Transform3D(2.2, 0, 0, 0, 2.2, 0, 0, 0, 2.2, 0.0137253, 0.00999999, 0.718413)
+shape = SubResource("9")
+
+[node name="Tree6" parent="." instance=ExtResource("16")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.61791, 0.801388, -3.91012)
+
+[node name="CollisionShape3D" parent="Tree6" index="0"]
+transform = Transform3D(2.2, 0, 0, 0, 2.2, 0, 0, 0, 2.2, 0.0557175, 0.195269, 0.677973)
+
+[node name="Sprite3D" parent="Tree6" index="1"]
+transform = Transform3D(-1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, -0.614203, 0, 0)
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="Tree6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Tree6/CharacterBody3D"]
+transform = Transform3D(2.2, 0, 0, 0, 2.2, 0, 0, 0, 2.2, 0.0137253, 0.00999999, 0.718413)
 shape = SubResource("9")
 
 [node name="rock" parent="." instance=ExtResource("16")]
@@ -878,52 +924,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.85493, 0, 0)
 pixel_size = 0.0034
 texture = ExtResource("7")
 
-[node name="Tree3" parent="." instance=ExtResource("16")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 3.49372, 0.815802, -1.74143)
-
-[node name="CollisionShape3D" parent="Tree3" index="0"]
-transform = Transform3D(2.7, 0, 0, 0, 2.898, 0, 0, 0, 0.2636, 0.0137253, 0.00999999, 0.0280936)
-
-[node name="Sprite3D" parent="Tree3" index="1"]
-transform = Transform3D(-1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0)
-
-[node name="CharacterBody3D" type="CharacterBody3D" parent="Tree3"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tree3/CharacterBody3D"]
-transform = Transform3D(2.05, 0, 0, 0, 2.2, 0, 0, 0, 0.2, 0.0137253, 0.00999999, 0.0280936)
-shape = SubResource("9")
-
-[node name="Tree4" parent="." instance=ExtResource("16")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.813225, 0.836493, -1.74143)
-
-[node name="CollisionShape3D" parent="Tree4" index="0"]
-transform = Transform3D(2.7, 0, 0, 0, 2.898, 0, 0, 0, 0.3954, 0.0137253, 0.00999999, 0.0280936)
-
-[node name="Sprite3D" parent="Tree4" index="1"]
-transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0)
-
-[node name="CharacterBody3D" type="CharacterBody3D" parent="Tree4"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tree4/CharacterBody3D"]
-transform = Transform3D(2.05, 0, 0, 0, 2.2, 0, 0, 0, 0.2, 0.0137253, 0.00999999, 0.0280936)
-shape = SubResource("9")
-
-[node name="Tree5" parent="." instance=ExtResource("16")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.90446, 0.832139, -4.73481)
-
-[node name="CollisionShape3D" parent="Tree5" index="0"]
-transform = Transform3D(2.7, 0, 0, 0, 2.898, 0, 0, 0, 0.23724, 0.0137253, 0.00999999, 0.0280933)
-
-[node name="Sprite3D" parent="Tree5" index="1"]
-transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0)
-
-[node name="CharacterBody3D" type="CharacterBody3D" parent="Tree5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.3, 0, 0, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Tree5/CharacterBody3D"]
-transform = Transform3D(2.05, 0, 0, 0, 2.2, 0, 0, 0, 1, 0.0137253, 0.01, 0.0280936)
-shape = SubResource("9")
-
 [node name="grass2" type="Sprite3D" parent="."]
 transform = Transform3D(1, -3.57152e-14, 2.06202e-14, 2.06202e-14, 0.866025, 0.5, -3.57152e-14, -0.5, 0.866025, -2.10915, 0, 4.13467)
 pixel_size = 0.0034
@@ -973,10 +973,10 @@ shape = SubResource("84")
 transform = Transform3D(-6.72242e-06, 0, -11.1897, 0, 1.825, 0, 1.45, 0, -2.38447e-05, -0.889998, 0, -9.42)
 shape = SubResource("84")
 
-[editable path="Tree"]
 [editable path="Tree2"]
-[editable path="rock"]
-[editable path="rock2"]
 [editable path="Tree3"]
 [editable path="Tree4"]
 [editable path="Tree5"]
+[editable path="Tree6"]
+[editable path="rock"]
+[editable path="rock2"]
